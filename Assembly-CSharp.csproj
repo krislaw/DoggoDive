@@ -66,6 +66,8 @@
      <Compile Include="Assets\_Completed-Assets\Scripts\Done_RandomRotator.cs" />
      <Compile Include="Assets\_Completed-Assets\Scripts\Done_WeaponController.cs" />
      <Compile Include="Assets\doggo\scripts\PlayerController.cs" />
+     <Compile Include="Assets\doggo\scripts\ShotMover.cs" />
+     <Compile Include="Assets\doggo\scripts\bound.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
