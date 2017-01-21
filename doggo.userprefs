@@ -1,10 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/WaterBound.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GameController.cs">
     <Files>
-      <File FileName="Assets/GameController.cs" Line="34" Column="13" />
+      <File FileName="Assets/GameController.cs" Line="69" Column="47" />
       <File FileName="Assets/WaterBound.cs" Line="9" Column="1" />
       <File FileName="Assets/AirBound.cs" Line="12" Column="33" />
+      <File FileName="Assets/scripts/bound.cs" Line="7" Column="38" />
+      <File FileName="Assets/scripts/PlayerController.cs" Line="43" Column="41" />
+      <File FileName="Assets/EnemyMove.cs" Line="11" Column="36" />
+      <File FileName="Assets/scripts/ShotMover.cs" Line="16" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

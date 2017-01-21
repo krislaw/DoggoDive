@@ -7,6 +7,9 @@ TagManager:
   - bolt
   - Bound
   - Enemy
+  - Boundary
+  - AirBound
+  - WaterBound
   layers:
   - Default
   - TransparentFX

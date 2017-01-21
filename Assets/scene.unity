@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 436438608}
   m_Layer: 0
   m_Name: WaterBound
-  m_TagString: Untagged
+  m_TagString: WaterBound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -215,8 +215,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 25.121252, y: 1, z: 8.059632}
-  m_Center: {x: 7.8833594, y: 0, z: -0.98518515}
+  m_Size: {x: 29.418928, y: 1, z: 8.059632}
+  m_Center: {x: 10.032197, y: 0, z: -0.98518515}
 --- !u!33 &436438607
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -358,12 +358,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   airLabel: {fileID: 1988171574}
   gameOverLabel: {fileID: 1405692156}
-  hazard: {fileID: 1717872373224870, guid: d3668acefbac04fe9b178add33cfc6a9, type: 2}
-  spawnValues: {x: 20, y: 0, z: 5}
+  scoreLabel: {fileID: 1619306583}
+  hazard: {fileID: 1358845404208114, guid: d3668acefbac04fe9b178add33cfc6a9, type: 2}
+  spawnValues: {x: 20, y: 0, z: 4}
   spawnWait: 0.5
   startWait: 1
   waveWait: 2
-  hazardCount: 15
+  hazardCount: 5
 --- !u!1 &829260482
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,8 +436,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.8534818, y: 0.9999998, z: 0.9999999}
+  m_Center: {x: -0.07326043, y: 0, z: 0}
 --- !u!33 &829260486
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -457,48 +458,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1005638739
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4305130778350404, guid: d3668acefbac04fe9b178add33cfc6a9, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 9.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 4305130778350404, guid: d3668acefbac04fe9b178add33cfc6a9, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4305130778350404, guid: d3668acefbac04fe9b178add33cfc6a9, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4305130778350404, guid: d3668acefbac04fe9b178add33cfc6a9, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4305130778350404, guid: d3668acefbac04fe9b178add33cfc6a9, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4305130778350404, guid: d3668acefbac04fe9b178add33cfc6a9, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4305130778350404, guid: d3668acefbac04fe9b178add33cfc6a9, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4305130778350404, guid: d3668acefbac04fe9b178add33cfc6a9, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d3668acefbac04fe9b178add33cfc6a9, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1076222297
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,7 +597,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1171644338}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.661, y: -0.05, z: 0}
+  m_LocalPosition: {x: -0.661, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1935758467}
@@ -681,7 +640,7 @@ GUIText:
   m_GameObject: {fileID: 1405692154}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: 
+  m_Text: Game Over
   m_Anchor: 4
   m_Alignment: 1
   m_PixelOffset: {x: 0, y: 0}
@@ -690,6 +649,58 @@ GUIText:
   m_Font: {fileID: 0}
   m_Material: {fileID: 0}
   m_FontSize: 70
+  m_FontStyle: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
+--- !u!1 &1619306581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1619306582}
+  - component: {fileID: 1619306583}
+  m_Layer: 0
+  m_Name: Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1619306582
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1619306581}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.9, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1667656849}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!132 &1619306583
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1619306581}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: 'Score: abc'
+  m_Anchor: 2
+  m_Alignment: 1
+  m_PixelOffset: {x: 10, y: 0}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 30
   m_FontStyle: 1
   m_Color:
     serializedVersion: 2
@@ -709,7 +720,7 @@ GameObject:
   - component: {fileID: 1622926799}
   m_Layer: 0
   m_Name: AirBound
-  m_TagString: Untagged
+  m_TagString: AirBound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -737,8 +748,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 25.16737, y: 1, z: 1.281353}
-  m_Center: {x: 7.8544145, y: 0, z: 1.2739599}
+  m_Size: {x: 29.873863, y: 1, z: 1.281353}
+  m_Center: {x: 10.207661, y: 0, z: 1.2739599}
 --- !u!33 &1622926798
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -784,6 +795,7 @@ Transform:
   m_Children:
   - {fileID: 1988171575}
   - {fileID: 1405692155}
+  - {fileID: 1619306582}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -889,7 +901,7 @@ MonoBehaviour:
     zMin: -5
     zMax: 4
   speed: 5
-  bork: {fileID: 1067674154275592, guid: 63b9167bd40db43a395cf19ed2cd243f, type: 2}
+  bork: {fileID: 1587604716296820, guid: 63b9167bd40db43a395cf19ed2cd243f, type: 2}
   shotSpawn: {fileID: 1171644339}
   fireRate: 0.15
 --- !u!54 &1935758469
@@ -1011,9 +1023,7 @@ GUIText:
   m_GameObject: {fileID: 1988171573}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: 'Air: ???
-
-'
+  m_Text: "Air: \u0192\u0192\u0192\n"
   m_Anchor: 0
   m_Alignment: 1
   m_PixelOffset: {x: 10, y: 0}

@@ -6,16 +6,22 @@ public class GameController : MonoBehaviour {
 
 	public GUIText airLabel;
 	public GUIText gameOverLabel;
+	public GUIText scoreLabel;
+
 
 	private bool gameEnded;
 	private bool restart;
 
 	private int air;
+	private int score;
 
 	// Use this for initialization
 	void Start () {
 		air = 3000;
 		airLabel.text = "Air: " + air;
+		gameOverLabel.text = "";
+		scoreLabel.text = "Score: 0";
+		score = 0;
 		gameEnded = false;
 		restart = false;
 
@@ -26,6 +32,7 @@ public class GameController : MonoBehaviour {
 	void Update () {
 //		Debug.LogAssertion (air);
 		airLabel.text = "Air: " + air;
+		scoreLabel.text = "Score: " + score;
 
 		if (restart){
 			if(Input.GetKeyDown (KeyCode.R)){
@@ -51,6 +58,10 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
+	public void addScore(int newScore){
+		score += newScore;
+	}
+
 	public GameObject hazard;
 	public Vector3 spawnValues;
 	public float spawnWait;
@@ -66,7 +77,14 @@ public class GameController : MonoBehaviour {
 				Instantiate (hazard, spawnPosition, Quaternion.Euler(0, 0, 0));
 				yield return new WaitForSeconds (spawnWait);
 			}
-			yield return new WaitForSeconds (waveWait);
+			while (GameObject.FindGameObjectsWithTag("Enemy").Length != 0){
+//				Debug.Log ("waiting for clones to die");
+				yield return new WaitForSeconds (waveWait);
+			}
+
+			hazardCount = (int)(1.5 * hazardCount);
+			Debug.Log ("next wave,,, haz::" + hazardCount);
+
 		}
 	}
 
