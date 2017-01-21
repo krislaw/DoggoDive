@@ -7,6 +7,4 @@ public class bound : MonoBehaviour {
 		Debug.LogAssertion (other.name + "Hit Bound");
 		Destroy (other.gameObject);
 	}
-
-
 }
