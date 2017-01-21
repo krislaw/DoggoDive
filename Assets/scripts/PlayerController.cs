@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour {
 //			Debug.LogAssertion ("FIRE??");
 			nextFire = Time.time + fireRate;
 			Instantiate (bork, shotSpawn.position, shotSpawn.rotation);
+			GetComponent<AudioSource> ().Play ();
 		}
 	}
 }
