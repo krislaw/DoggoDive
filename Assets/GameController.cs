@@ -5,7 +5,10 @@ using UnityEngine;
 public class GameController : MonoBehaviour {
 
 	public GUIText airLabel;
-//	public GUIText score;
+	public GUIText gameOverLabel;
+
+	private bool gameEnded;
+	private bool restart;
 
 	private int air;
 
@@ -13,19 +16,30 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		air = 3000;
 		airLabel.text = "Air: " + air;
+		gameEnded = false;
+		restart = false;
+
+		StartCoroutine (SpawnWaves ());
 	}
 	
 	// Update is called once per frame
 	void Update () {
 //		Debug.LogAssertion (air);
 		airLabel.text = "Air: " + air;
+
+		if (restart){
+			if(Input.GetKeyDown (KeyCode.R)){
+				Application.LoadLevel (Application.loadedLevel);
+//				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+			}
+		}
 	}
 
 	public void decreaseAir(){
 		if (air > 0){
 			air--;
 		} else {
-			//game over
+			gameOver ();
 		}
 	}
 
@@ -35,5 +49,29 @@ public class GameController : MonoBehaviour {
 		} else {
 			air = 3000;
 		}
+	}
+
+	public GameObject hazard;
+	public Vector3 spawnValues;
+	public float spawnWait;
+	public float startWait;
+	public float waveWait;
+	public int hazardCount;
+
+	IEnumerator SpawnWaves(){
+		yield return new WaitForSeconds (startWait);
+		while(!gameEnded){
+			for(int i = 0; i < hazardCount; i++){
+				Vector3 spawnPosition = new Vector3 (spawnValues.x, spawnValues.y, Random.Range (-spawnValues.z, spawnValues.z));
+				Instantiate (hazard, spawnPosition, Quaternion.Euler(0, 0, 0));
+				yield return new WaitForSeconds (spawnWait);
+			}
+			yield return new WaitForSeconds (waveWait);
+		}
+	}
+
+	public void gameOver(){
+		gameEnded = true;
+		gameOverLabel.text = "Game Over!";
 	}
 }
