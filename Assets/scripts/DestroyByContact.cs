@@ -18,7 +18,10 @@ public class DestroyByContact : MonoBehaviour {
 
 	}
 
-//	public GameObject explosion;
+	public GameObject explosion_1;
+//	public GameObject explosion_2;
+//	private GameObject explosion;
+
 //	public GameObject playerExplosion;
 	private GameController gameController;
 	public int score;
@@ -36,10 +39,13 @@ public class DestroyByContact : MonoBehaviour {
 			gameController.gameOver ();
 		} 
 
+
+//		if(Random. >= 0.5){
+//			
+//		}
+
 		AudioSource.PlayClipAtPoint (clip, new Vector3(0, 0, 0));
-
-
-//		Instantiate (explosion, transform.position, transform.rotation);
+		Instantiate (explosion_1, transform.position, transform.rotation);
 		Destroy(other.gameObject);
 		Destroy(gameObject);
 

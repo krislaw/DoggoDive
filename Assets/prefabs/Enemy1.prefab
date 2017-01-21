@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0530e19a59be14ea5a9c623e6c5c32eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion_1: {fileID: 100002, guid: f7efb0d9df2264096af57128df85dddb, type: 2}
   score: 10
   clip: {fileID: 8300000, guid: 6ac143dba7c7c4b3c838555084cfdebf, type: 3}
 --- !u!114 &114598050958040300
