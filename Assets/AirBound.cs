@@ -10,7 +10,6 @@ public class AirBound : MonoBehaviour {
 		if (other.tag == "Player"){
 //			Debug.LogAssertion ("player in air");
 			gameController.increaseAir();
-
 		}
 	}
 
