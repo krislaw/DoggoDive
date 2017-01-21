@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class bound : MonoBehaviour {
 	void OnTriggerExit(Collider other){
-		Debug.LogAssertion (other.name + "Hit Bound");
+//		Debug.LogAssertion (other.name + "Hit Bound");
 		Destroy (other.gameObject);
 	}
 }

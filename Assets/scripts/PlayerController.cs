@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetButton("Jump") && Time.time > nextFire){
-			Debug.LogAssertion ("FIRE??");
+//			Debug.LogAssertion ("FIRE??");
 			nextFire = Time.time + fireRate;
 			Instantiate (bork, shotSpawn.position, shotSpawn.rotation);
 		}
