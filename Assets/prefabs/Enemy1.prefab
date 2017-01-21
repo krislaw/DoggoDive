@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 10
+  clip: {fileID: 8300000, guid: 6ac143dba7c7c4b3c838555084cfdebf, type: 3}
 --- !u!114 &114598050958040300
 MonoBehaviour:
   m_ObjectHideFlags: 1
