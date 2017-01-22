@@ -12,12 +12,11 @@ public class GameController : MonoBehaviour {
 	private bool gameEnded;
 	private bool restart;
 
-	private int air;
+	public int air;
 	private int score;
 
 	// Use this for initialization
 	void Start () {
-		air = 3000;
 		airLabel.text = "Air: " + air;
 		gameOverLabel.text = "";
 		scoreLabel.text = "Score: 0";
@@ -37,6 +36,7 @@ public class GameController : MonoBehaviour {
 		if (restart){
 			if(Input.GetKeyDown (KeyCode.R)){
 				Application.LoadLevel (Application.loadedLevel);
+				Time.timeScale = 1;
 //				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 			}
 		}
@@ -101,6 +101,8 @@ public class GameController : MonoBehaviour {
 
 	public void gameOver(){
 		gameEnded = true;
-		gameOverLabel.text = "Game Over!";
+		restart = true;
+		Time.timeScale = 0;
+		gameOverLabel.text = "Game Over! \n Press R to restart!";
 	}
 }
