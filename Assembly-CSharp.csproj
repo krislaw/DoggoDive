@@ -50,6 +50,12 @@
      <Compile Include="Assets\CloudCycle\Clouds.cs" />
      <Compile Include="Assets\ScreenFader\ScreenFadeControl.cs" />
      <Compile Include="Assets\ScreenFader\ScreenFader.cs" />
+     <Compile Include="Assets\Sky FX Pack\Scripts\LightBeamsControlScript.cs" />
+     <Compile Include="Assets\Sky FX Pack\Scripts\LookAtBehaviour.cs" />
+     <Compile Include="Assets\Sky FX Pack\Scripts\LookAtCameraBehaviour.cs" />
+     <Compile Include="Assets\Sky FX Pack\Scripts\RayBehavior.cs" />
+     <Compile Include="Assets\Sky FX Pack\Scripts\RotateBehaviour.cs" />
+     <Compile Include="Assets\Sky FX Pack\Scripts\ScrollBehaviour.cs" />
      <Compile Include="Assets\scripts\AirBound.cs" />
      <Compile Include="Assets\scripts\AirMeterBar.cs" />
      <Compile Include="Assets\scripts\DestroyByContact.cs" />

@@ -35,8 +35,8 @@ public class GameController : MonoBehaviour {
 		fade = gameObject.AddComponent<ScreenFader>();
 		fade.fadeMaterial = fadeMaterial;
 
-
-		StartCoroutine (SpawnWaves ());
+		currentWave = 1;
+//		StartCoroutine (SpawnWaves ());
 	}
 	
 	// Update is called once per frame
@@ -50,6 +50,7 @@ public class GameController : MonoBehaviour {
 		Rect rect = airBar.pixelInset;
 		rect.width = 300 * percentAir;
 		airBar.pixelInset = rect;
+		
 
 		//game restart
 		if (restart){
@@ -90,24 +91,28 @@ public class GameController : MonoBehaviour {
 	public float waveWait;
 	public int hazardCount;
 
+	private int currentWave;
+
 	IEnumerator SpawnWaves(){
 		yield return new WaitForSeconds (startWait);
+
 		while(!gameEnded){
 			for(int i = 0; i < hazardCount; i++){
-
-				GameObject enemy = hazards [Random.Range (0, hazards.Length)];
+				GameObject enemy = hazards [Random.Range (0, currentWave)];
 
 				Vector3 spawnPosition = new Vector3 (spawnValues.x, spawnValues.y, Random.Range (-spawnValues.z, spawnValues.z));
 				Instantiate (enemy, spawnPosition, Quaternion.Euler(0, 0, 0));
 				yield return new WaitForSeconds (spawnWait);
 			}
 			while (GameObject.FindGameObjectsWithTag("Enemy").Length != 0){
-//				Debug.Log ("waiting for clones to die");
 				yield return new WaitForSeconds (waveWait);
 			}
 
 			hazardCount = (int)(1.5 * hazardCount);
-			Debug.Log ("next wave, hazard count:" + hazardCount);
+			if (currentWave < hazards.Length){
+				currentWave++;
+			}
+			Debug.Log ("wave " + currentWave +", hazard count:" + hazardCount);
 		}
 	}
 
@@ -129,7 +134,5 @@ public class GameController : MonoBehaviour {
 
 		//fade to black here???
 		fade.fadeIn = false;
-//		Time.timeScale = 0;
-
 	}
 }
