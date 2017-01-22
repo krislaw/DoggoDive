@@ -19,6 +19,9 @@ public class GameController : MonoBehaviour {
 
 	public GameObject player;
 
+	public Material fadeMaterial;
+	private ScreenFader fade;
+
 	// Use this for initialization
 	void Start () {
 		air = maxAir;
@@ -28,6 +31,9 @@ public class GameController : MonoBehaviour {
 		score = 0;
 		gameEnded = false;
 		restart = false;
+
+		fade = gameObject.AddComponent<ScreenFader>();
+		fade.fadeMaterial = fadeMaterial;
 
 
 		StartCoroutine (SpawnWaves ());
@@ -111,7 +117,11 @@ public class GameController : MonoBehaviour {
 		gameEnded = true;
 		restart = true;
 //		Destroy (player);
-		Time.timeScale = 0;
 		gameOverLabel.text = "Game Over! \n Press R to restart!";
+
+		//fade to black here???
+		fade.fadeIn = false;
+//		Time.timeScale = 0;
+
 	}
 }
