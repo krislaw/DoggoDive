@@ -24,6 +24,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 400002}
+  - component: {fileID: 114997111686246330}
   m_Layer: 0
   m_Name: Effect_02
   m_TagString: Untagged
@@ -132,7 +133,7 @@ ParticleSystem:
   serializedVersion: 5
   lengthInSec: 1
   speed: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   autoRandomSeed: 1
@@ -621,7 +622,7 @@ ParticleSystem:
     enabled: 1
     serializedVersion: 3
     rateOverTime:
-      scalar: 1
+      scalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -710,7 +711,7 @@ ParticleSystem:
     time1: 1
     time2: 2
     time3: 0
-    m_BurstCount: 0
+    m_BurstCount: 1
   SizeModule:
     enabled: 0
     curve:
@@ -2696,7 +2697,7 @@ ParticleSystemRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -2731,3 +2732,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100002}
   m_IsPrefabParent: 1
+--- !u!114 &114997111686246330
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c06b527b34a214efca6573e71e9d7a53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 1

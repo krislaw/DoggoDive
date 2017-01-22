@@ -62,7 +62,9 @@ public class GameController : MonoBehaviour {
 		score += newScore;
 	}
 
-	public GameObject hazard;
+	public GameObject hazard_1;
+	public GameObject hazard_2;
+
 	public Vector3 spawnValues;
 	public float spawnWait;
 	public float startWait;
@@ -73,8 +75,17 @@ public class GameController : MonoBehaviour {
 		yield return new WaitForSeconds (startWait);
 		while(!gameEnded){
 			for(int i = 0; i < hazardCount; i++){
+
+				GameObject enemy;
+
+				if(Random.Range (0, 2) >= 1){
+					enemy = hazard_1;
+				} else {
+					enemy = hazard_2;
+				}
+
 				Vector3 spawnPosition = new Vector3 (spawnValues.x, spawnValues.y, Random.Range (-spawnValues.z, spawnValues.z));
-				Instantiate (hazard, spawnPosition, Quaternion.Euler(0, 0, 0));
+				Instantiate (enemy, spawnPosition, Quaternion.Euler(0, 0, 0));
 				yield return new WaitForSeconds (spawnWait);
 			}
 			while (GameObject.FindGameObjectsWithTag("Enemy").Length != 0){

@@ -43,4 +43,5 @@ public class PlayerController : MonoBehaviour {
 			GetComponent<AudioSource> ().Play ();
 		}
 	}
+
 }

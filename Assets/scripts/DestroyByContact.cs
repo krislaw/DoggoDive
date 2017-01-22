@@ -19,8 +19,8 @@ public class DestroyByContact : MonoBehaviour {
 	}
 
 	public GameObject explosion_1;
-//	public GameObject explosion_2;
-//	private GameObject explosion;
+	public GameObject explosion_2;
+	private GameObject explosion;
 
 //	public GameObject playerExplosion;
 	private GameController gameController;
@@ -40,12 +40,14 @@ public class DestroyByContact : MonoBehaviour {
 		} 
 
 
-//		if(Random. >= 0.5){
-//			
-//		}
+		if(Random.Range (0, 2) >= 1){
+			explosion = explosion_1;
+		} else {
+			explosion = explosion_2;
+		}
 
 		AudioSource.PlayClipAtPoint (clip, new Vector3(0, 0, 0));
-		Instantiate (explosion_1, transform.position, transform.rotation);
+		Instantiate (explosion, transform.position, transform.rotation);
 		Destroy(other.gameObject);
 		Destroy(gameObject);
 
