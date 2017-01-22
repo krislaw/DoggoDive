@@ -364,7 +364,8 @@ MonoBehaviour:
   airLabel: {fileID: 1988171574}
   gameOverLabel: {fileID: 1405692156}
   scoreLabel: {fileID: 1619306583}
-  air: 2000
+  maxAir: 1500
+  player: {fileID: 0}
   hazard_1: {fileID: 1555857998138862, guid: d3668acefbac04fe9b178add33cfc6a9, type: 2}
   hazard_2: {fileID: 1507297918425498, guid: ffd32ff531dc448c2b0a298757215dce, type: 2}
   spawnValues: {x: 20, y: 0, z: 4}
