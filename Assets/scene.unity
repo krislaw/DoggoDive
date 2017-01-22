@@ -351,7 +351,7 @@ MonoBehaviour:
   gameOverLabel: {fileID: 1405692156}
   scoreLabel: {fileID: 1619306583}
   airBar: {fileID: 703444730}
-  maxAir: 1500
+  maxAir: 200
   player: {fileID: 1935758463}
   fadeMaterial: {fileID: 2100000, guid: e642b458f4453e04ab7e2b711c58db98, type: 2}
   hazards:
@@ -359,6 +359,7 @@ MonoBehaviour:
   - {fileID: 1507297918425498, guid: ffd32ff531dc448c2b0a298757215dce, type: 2}
   - {fileID: 1766835883562180, guid: 4d4683a91ac544484856e33b160ac7a1, type: 2}
   - {fileID: 1068671182279704, guid: 3d3ca93af1f9445f39491eccb2572245, type: 2}
+  - {fileID: 1919083659890094, guid: 627f3c1347ac84bdb82b8b23a368942b, type: 2}
   spawnValues: {x: 20, y: 0, z: 4}
   spawnWait: 0.5
   startWait: 1
@@ -448,8 +449,8 @@ GUITexture:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 703444727}
   m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: 13141025b1a5b46d7ae69dcf174760e8, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5}
+  m_Texture: {fileID: 2800000, guid: 76222964365ea434f9fc36d54ba29a74, type: 3}
+  m_Color: {r: 0.26027247, g: 0.36457607, b: 0.42647058, a: 0.5}
   m_PixelInset:
     serializedVersion: 2
     x: 0
@@ -1077,7 +1078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundary:
-    xMin: -2
+    xMin: -1
     xMax: 15
     zMin: -5
     zMax: 4

@@ -61,10 +61,12 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void decreaseAir(){
-		if (air > 0){
-			air--;
-		} else {
-			gameOver ();
+		if (!gameEnded) {
+			if (air > 0) {
+				air--;
+			} else {
+				gameOver ();
+			}
 		}
 	}
 
@@ -114,10 +116,16 @@ public class GameController : MonoBehaviour {
 	public void gameOver(){
 		AudioSource.PlayClipAtPoint (clip, new Vector3(0, 0, 0));
 		GetComponent <AudioSource> ().Stop ();
+
 		gameEnded = true;
 		restart = true;
-//		Destroy (player);
 		gameOverLabel.text = "Game Over! \n Press R to restart!";
+
+		foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy")){
+			Destroy (enemy);
+		}
+
+		Destroy (player);
 
 		//fade to black here???
 		fade.fadeIn = false;
