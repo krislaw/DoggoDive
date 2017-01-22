@@ -12,11 +12,15 @@ public class GameController : MonoBehaviour {
 	private bool gameEnded;
 	private bool restart;
 
-	public int air;
+	public int maxAir;
+	private int air;
 	private int score;
+
+	public GameObject player;
 
 	// Use this for initialization
 	void Start () {
+		air = maxAir;
 		airLabel.text = "Air: " + air;
 		gameOverLabel.text = "";
 		scoreLabel.text = "Score: 0";
@@ -51,10 +55,10 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void increaseAir(){
-		if (air < 3000){
+		if (air < maxAir){
 			air += 5;
 		} else {
-			air = 3000;
+			air = maxAir;
 		}
 	}
 
@@ -99,9 +103,14 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
+	public AudioClip clip;
+
 	public void gameOver(){
+		AudioSource.PlayClipAtPoint (clip, new Vector3(0, 0, 0));
+		GetComponent <AudioSource> ().Stop ();
 		gameEnded = true;
 		restart = true;
+		Destroy (player);
 		Time.timeScale = 0;
 		gameOverLabel.text = "Game Over! \n Press R to restart!";
 	}
