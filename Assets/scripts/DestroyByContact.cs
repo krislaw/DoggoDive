@@ -22,14 +22,13 @@ public class DestroyByContact : MonoBehaviour {
 	public GameObject explosion_2;
 	private GameObject explosion;
 
-//	public GameObject playerExplosion;
 	private GameController gameController;
 	public int score;
 
 	public AudioClip clip;
 
 	void OnTriggerEnter(Collider other) {
-		if (other.tag == "Bound" || other.tag == "WaterBound" || other.tag == "Enemy"){
+		if (other.tag == "Bound" || other.tag == "WaterBound" || other.tag == "Enemy" || other.tag == "cloud"){
 			return;
 		} else if (other.tag == "AirBound"){
 			Destroy (gameObject);

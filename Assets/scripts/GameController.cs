@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour {
 	public GUIText gameOverLabel;
 	public GUIText scoreLabel;
 
+	public GUITexture airBar;
 
 	private bool gameEnded;
 	private bool restart;
@@ -28,20 +29,27 @@ public class GameController : MonoBehaviour {
 		gameEnded = false;
 		restart = false;
 
+
 		StartCoroutine (SpawnWaves ());
 	}
 	
 	// Update is called once per frame
 	void Update () {
-//		Debug.LogAssertion (air);
+		//update labels
 		airLabel.text = "Air: " + air;
 		scoreLabel.text = "Score: " + score;
 
+		//update air bar
+		float percentAir = (float) air / (float) maxAir;
+		Rect rect = airBar.pixelInset;
+		rect.width = 300 * percentAir;
+		airBar.pixelInset = rect;
+
+		//game restart
 		if (restart){
 			if(Input.GetKeyDown (KeyCode.R)){
 				Application.LoadLevel (Application.loadedLevel);
 				Time.timeScale = 1;
-//				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 			}
 		}
 	}
@@ -65,9 +73,8 @@ public class GameController : MonoBehaviour {
 	public void addScore(int newScore){
 		score += newScore;
 	}
-
-	public GameObject hazard_1;
-	public GameObject hazard_2;
+		
+	public GameObject[] hazards = new GameObject[4];
 
 	public Vector3 spawnValues;
 	public float spawnWait;
@@ -80,13 +87,7 @@ public class GameController : MonoBehaviour {
 		while(!gameEnded){
 			for(int i = 0; i < hazardCount; i++){
 
-				GameObject enemy;
-
-				if(Random.Range (0, 2) >= 1){
-					enemy = hazard_1;
-				} else {
-					enemy = hazard_2;
-				}
+				GameObject enemy = hazards [Random.Range (0, hazards.Length)];
 
 				Vector3 spawnPosition = new Vector3 (spawnValues.x, spawnValues.y, Random.Range (-spawnValues.z, spawnValues.z));
 				Instantiate (enemy, spawnPosition, Quaternion.Euler(0, 0, 0));
@@ -98,8 +99,7 @@ public class GameController : MonoBehaviour {
 			}
 
 			hazardCount = (int)(1.5 * hazardCount);
-			Debug.Log ("next wave,,, haz::" + hazardCount);
-
+			Debug.Log ("next wave, hazard count:" + hazardCount);
 		}
 	}
 
@@ -110,7 +110,7 @@ public class GameController : MonoBehaviour {
 		GetComponent <AudioSource> ().Stop ();
 		gameEnded = true;
 		restart = true;
-		Destroy (player);
+//		Destroy (player);
 		Time.timeScale = 0;
 		gameOverLabel.text = "Game Over! \n Press R to restart!";
 	}

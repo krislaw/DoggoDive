@@ -10,6 +10,8 @@ TagManager:
   - Boundary
   - AirBound
   - WaterBound
+  - AirBar
+  - cloud
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - clouds
   - 
   - 
   - 
